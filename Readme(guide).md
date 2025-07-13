@@ -539,6 +539,36 @@ Push the updated `Jenkinsfile` to your GitHub repository to trigger the pipeline
 2. Click on **Build Now** for your pipeline.
 3. The pipeline will execute, building the Docker image and pushing it to **Amazon ECR**.
 
+If any errors occur related to:
+The error `permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock` means the Jenkins build process does not have permission to access the Docker daemon.
+
+**Reason:**  
+The user running Jenkins (often `jenkins` inside the container or VM) is not in the `docker` group or does not have the required permissions to access `/var/run/docker.sock`.
+
+**How to fix:**  
+To troubleshoot Docker permission issues further, follow these steps:
+
+Verify Docker Group Membership: Ensure the jenkins user is part of the docker group:
+
+groups jenkins
+If the docker group is missing, add the user:
+
+
+
+sudo usermod -aG docker jenkins
+
+Check Docker Socket Permissions: Verify the permissions of /var/run/docker.sock:
+
+
+ls -l /var/run/docker.sock
+
+Ensure the socket is owned by the docker group:
+
+
+sudo chown root:docker /var/run/docker.sock
+
+sudo chmod 660 /var/run/docker.sock
+
 ---
 
 ✅ **Congratulations!** Your Docker image has been successfully built and pushed to Amazon ECR using Jenkins.
