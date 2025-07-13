@@ -1,4 +1,4 @@
-# Use the Jenkins image as the base image
+# Use the Jenkinsfile image as the base image
 FROM jenkins/jenkins:lts
 
 # Switch to root user to install dependencies
@@ -13,7 +13,7 @@ RUN apt-get update -y && \
     apt-get install -y docker-ce docker-ce-cli containerd.io && \
     apt-get clean
 
-# Add Jenkins user to the Docker group (create if it doesn't exist)
+# Add Jenkinsfile user to the Docker group (create if it doesn't exist)
 RUN groupadd -f docker && \
     usermod -aG docker jenkins
 
@@ -21,5 +21,5 @@ RUN groupadd -f docker && \
 RUN mkdir -p /var/lib/docker
 VOLUME /var/lib/docker
 
-# Switch back to the Jenkins user
+# Switch back to the Jenkinsfile user
 USER jenkins
