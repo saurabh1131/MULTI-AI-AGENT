@@ -641,6 +641,7 @@ Follow these steps to deploy your app to **AWS ECS Fargate** using Jenkins and a
 1. **Add ECS Full Access Policy** to the IAM user:
    - Go to **IAM** → **Users** → **Your IAM User** → **Attach Policies**.
    - Attach the **AmazonEC2ContainerServiceFullAccess** policy to the IAM user.
+   - Attach the **AmazonECS_FullAccess** policy to the IAM user.
 
 2. **Update Jenkinsfile for ECS Deployment**:
    - Add the deployment stage to your `Jenkinsfile`. This will automate the deployment of your Docker container to AWS ECS.
