@@ -85,3 +85,11 @@
 2025-07-13 12:51:19,379 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-07-13 12:51:19,381 - INFO - Sucesfully got response from AI Agent llama3-70b-8192
 2025-07-13 12:51:19,382 - INFO - Sucesfully recived response from backend
+2025-07-13 13:06:45,292 - INFO - starting backend service..
+2025-07-13 13:06:47,299 - INFO - Starting Frontend service
+2025-07-13 13:07:01,229 - INFO - Sending request to backend
+2025-07-13 13:07:01,237 - ERROR - Error occured while sending request to backend
+2025-07-13 13:07:08,528 - INFO - Sending request to backend
+2025-07-13 13:07:08,530 - ERROR - Error occured while sending request to backend
+2025-07-13 13:07:26,883 - INFO - starting backend service..
+2025-07-13 13:07:28,888 - INFO - Starting Frontend service
